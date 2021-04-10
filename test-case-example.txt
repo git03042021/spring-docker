@@ -1,3 +1,5 @@
+//Example for B-Safe
+
 Class Utils {
 	String getInvoice(String invoiceNo) {
 		if(invoiceNo.equal("12345")) return {"name":"peter","blood-group":"B+"}
@@ -26,3 +28,37 @@ Class UtilsTest {
 		assert.equal(res1, "{"name":"","blood-group":""}");
 			
 	}
+	
+	
+	Class HangOutUtils {
+	String getInvoice(String invoiceNo) {
+		if(invoiceNo.equal("12345")) return {"name":"peter","seat-no":"AB-11"}
+		else if (invoiceNo.equal("67890")) return {"name":"john","seat-no":"ZZ-12"}
+		else return {"name":"","seat-no":""}
+	}
+}
+
+//Example for Hangout
+
+Class HangOutUtilsTest {
+	String getInvoice1PositiveTest(String invoiceNo) {
+		String res1 = Utils.getInvoice("12345")
+		assert.equal(res1, "{"name":"peter","seat-no":"AB-11"}");			
+	}
+
+	String getInvoice2PositiveTest(String invoiceNo) {
+		
+		String res2 = Utils.getInvoice("67890")
+		assert.equal(res1, "{"name":"john","seat-no":"ZZ-12"}");
+			
+	}
+
+	String getInvoiceNegativeTest(String invoiceNo) {
+		
+		String res = Utils.getInvoice("00000")
+		assert.equal(res1, "{"name":"","seat-no":""}");
+			
+	}
+
+
+}
