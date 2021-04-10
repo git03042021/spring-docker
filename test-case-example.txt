@@ -1,0 +1,28 @@
+Class Utils {
+	String getInvoice(String invoiceNo) {
+		if(invoiceNo.equal("12345")) return {"name":"peter","blood-group":"B+"}
+		else if (invoiceNo.equal("67890")) return {"name":"john","blood-group":"AB+"}
+		else return {"name":"","blood-group":""}
+	}
+}
+
+
+Class UtilsTest {
+	String getInvoice1PositiveTest(String invoiceNo) {
+		String res1 = Utils.getInvoice("12345")
+		assert.equal(res1, "{"name":"peter","blood-group":"B+"}");			
+	}
+
+	String getInvoice2PositiveTest(String invoiceNo) {
+		
+		String res2 = Utils.getInvoice("67890")
+		assert.equal(res1, "{"name":"john","blood-group":"AB+"}");
+			
+	}
+
+	String getInvoice2NegativeTest(String invoiceNo) {
+		
+		String res = Utils.getInvoice("00000")
+		assert.equal(res1, "{"name":"","blood-group":""}");
+			
+	}
