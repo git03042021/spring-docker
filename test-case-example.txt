@@ -59,6 +59,36 @@ Class HangOutUtilsTest {
 		assert.equal(res1, "{"name":"","seat-no":""}");
 			
 	}
-
-
 }
+
+//Example for ECom
+Class eComUtils {
+	String getInvoice(String invoiceNo) {
+		if(invoiceNo.equal("12345")) return {"name":"peter","shipping-address":"#11, NZ, USA"}
+		else if (invoiceNo.equal("67890")) return {"name":"john","shipping-address":"#21, CA, USA"}
+		else return {"name":"","shipping-address":""}
+	}
+}
+
+
+Class eComUtilsTest {
+	String getInvoice1PositiveTest(String invoiceNo) {
+		String res1 = Utils.getInvoice("12345")
+		assert.equal(res1, "{"name":"peter","shipping-address":"#11, NZ, USA"}");			
+	}
+
+	String getInvoice2PositiveTest(String invoiceNo) {
+		
+		String res2 = Utils.getInvoice("67890")
+		assert.equal(res1, "{"name":"john","shipping-address":"#21, CA, USA"}");
+			
+	}
+
+	String getInvoiceNegativeTest(String invoiceNo) {
+		
+		String res = Utils.getInvoice("00000")
+		assert.equal(res1, "{"name":"","shipping-address":""}");
+			
+	}
+}
+
